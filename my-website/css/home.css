@@ -1,69 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MovieHub</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .logo {
-      height: 40px;
-    }
-
-    .list img {
-      width: 120px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    @media (max-width: 768px) {
-      .list img {
-        width: 100px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .list img {
-        width: 80px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <div class="navbar">
-    <img src="https://i.imgur.com/QPqQFsM/logo.png" alt="MovieHub Logo" class="logo">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/movie-projector.png" alt="MovieHub Logo" />
     <div class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Movies</a>
-      <a href="#">TV Shows</a>
-      <a href="#">My List</a>
-      <input class="search-bar" type="text" placeholder="Search...">
+      <a href="#">Trending</a>
+      <a href="#">Top Rated</a>
+      <a href="#">Search</a>
     </div>
+    <input type="text" class="search-bar" placeholder="Search movies..." />
   </div>
 
-  <div class="banner" style="background-image: url('banner.jpg');">
+  <div class="banner" style="background-image: url('https://via.placeholder.com/1200x500');">
     <h1>Welcome to MovieHub</h1>
   </div>
 
   <div class="row">
-    <h2>Trending Now</h2>
+    <h2>Popular Now</h2>
     <div class="list">
-      <img src="movie1.jpg" alt="Movie 1">
-      <img src="movie2.jpg" alt="Movie 2">
-      <img src="movie3.jpg" alt="Movie 3">
-      <img src="movie4.jpg" alt="Movie 4">
-      <img src="movie5.jpg" alt="Movie 5">
+      <img src="https://via.placeholder.com/150x220" alt="Movie 1" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 2" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 3" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 4" />
     </div>
   </div>
 
   <div class="row">
-    <h2>Top Rated</h2>
+    <h2>Recently Added</h2>
     <div class="list">
-      <img src="movie6.jpg" alt="Movie 6">
-      <img src="movie7.jpg" alt="Movie 7">
-      <img src="movie8.jpg" alt="Movie 8">
-      <img src="movie9.jpg" alt="Movie 9">
-      <img src="movie10.jpg" alt="Movie 10">
+      <img src="https://via.placeholder.com/150x220" alt="Movie 5" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 6" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 7" />
+      <img src="https://via.placeholder.com/150x220" alt="Movie 8" />
     </div>
   </div>
 
