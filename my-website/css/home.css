@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MovieHub</title>
   <link rel="stylesheet" href="home.txt">
@@ -51,7 +52,7 @@
 
   <!-- Movie Categories -->
   <section class="row">
-    <h2>🌟 Popular This Week</h2>
+    <h2>&#9733; Popular This Week</h2>
     <div class="list">
       <img src="movie1.jpg" alt="Movie 1" onclick="openModal('Movie 1')">
       <img src="movie2.jpg" alt="Movie 2" onclick="openModal('Movie 2')">
@@ -60,7 +61,7 @@
   </section>
 
   <section class="row">
-    <h2>🎥 Latest Releases</h2>
+    <h2>&#127909; Latest Releases</h2>
     <div class="list">
       <img src="latest1.jpg" alt="Latest 1" onclick="openModal('Latest 1')">
       <img src="latest2.jpg" alt="Latest 2" onclick="openModal('Latest 2')">
@@ -71,13 +72,13 @@
   <!-- Modal -->
   <div class="modal" id="movieModal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" onclick="closeModal()">&#215;</span>
       <div class="modal-body">
         <img src="movie1.jpg" alt="Movie Poster">
         <div class="modal-text">
           <h2 id="modalTitle">Movie Title</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enjoy the show!</p>
-          <p class="stars">⭐⭐⭐⭐⭐</p>
+          <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
         </div>
       </div>
     </div>
@@ -85,7 +86,7 @@
 
   <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
-    <span class="close" onclick="closeSearchModal()">&times;</span>
+    <span class="close" onclick="closeSearchModal()">&#215;</span>
     <input type="text" placeholder="Search for a movie...">
     <div class="results">
       <img src="movie1.jpg" alt="Result 1">
