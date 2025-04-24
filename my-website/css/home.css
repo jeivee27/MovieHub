@@ -40,7 +40,7 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <img src="my-website/css/logo.png" alt="MovieHub Logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h1 style=\"color:white\">MovieHub</h1>')">
+    <img src="css/logo.png" alt="MovieHub Logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h1 style=\"color:white\">MovieHub</h1>')">
     <div class="hamburger" onclick="toggleMobileMenu()">
       <div></div>
       <div></div>
