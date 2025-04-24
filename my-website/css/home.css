@@ -18,6 +18,17 @@
       background-color: white;
       margin: 4px 0;
     }
+    .list img {
+      width: 100px;
+      max-height: 150px;
+      object-fit: cover;
+    }
+    .modal-body img {
+      width: 25%;
+    }
+    .search-modal img {
+      width: 90px;
+    }
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .nav-links { display: none; flex-direction: column; background: #222; padding: 10px; width: 100%; }
