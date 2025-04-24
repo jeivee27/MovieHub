@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MovieHub</title>
   <link rel="stylesheet" href="home.css" />
+  <link rel="icon" type="image/png" href="f89c812e-fc50-43d2-b0a9-8b7ac652dfc5.png" />
 </head>
 <body>
+
   <div class="navbar">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/movie-projector.png" alt="MovieHub Logo" />
+    <img src="f89c812e-fc50-43d2-b0a9-8b7ac652dfc5.png" alt="MovieHub Logo" />
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#">Trending</a>
@@ -22,23 +24,27 @@
     <h1>Welcome to MovieHub</h1>
   </div>
 
+  <div style="text-align: center; margin: 20px;">
+    <input type="text" id="movieSearch" placeholder="Search movies..." style="padding: 10px; width: 60%; max-width: 400px; border-radius: 5px; border: none;">
+  </div>
+
   <div class="row">
     <h2>Popular Now</h2>
-    <div class="list">
-      <img src="https://via.placeholder.com/150x220" alt="Movie 1" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 2" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 3" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 4" />
+    <div class="list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; justify-items: center;">
+      <img src="https://via.placeholder.com/100x150" alt="The Matrix" />
+      <img src="https://via.placeholder.com/100x150" alt="Inception" />
+      <img src="https://via.placeholder.com/100x150" alt="Avatar" />
+      <img src="https://via.placeholder.com/100x150" alt="Interstellar" />
     </div>
   </div>
 
   <div class="row">
     <h2>Recently Added</h2>
-    <div class="list">
-      <img src="https://via.placeholder.com/150x220" alt="Movie 5" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 6" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 7" />
-      <img src="https://via.placeholder.com/150x220" alt="Movie 8" />
+    <div class="list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 10px; justify-items: center;">
+      <img src="https://via.placeholder.com/100x150" alt="Tenet" />
+      <img src="https://via.placeholder.com/100x150" alt="John Wick" />
+      <img src="https://via.placeholder.com/100x150" alt="Dune" />
+      <img src="https://via.placeholder.com/100x150" alt="Oppenheimer" />
     </div>
   </div>
 
@@ -53,5 +59,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Simple live search by alt text
+    document.getElementById('movieSearch').addEventListener('input', function () {
+      const value = this.value.toLowerCase();
+      const images = document.querySelectorAll('.list img');
+      images.forEach(img => {
+        img.style.display = img.alt.toLowerCase().includes(value) ? 'block' : 'none';
+      });
+    });
+  </script>
+
 </body>
 </html>
