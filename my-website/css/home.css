@@ -9,6 +9,24 @@
     .logo {
       height: 40px;
     }
+
+    .list img {
+      width: 120px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .list img {
+        width: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .list img {
+        width: 80px;
+      }
+    }
   </style>
 </head>
 <body>
