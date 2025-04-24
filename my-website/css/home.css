@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MovieHub</title>
-  <link rel="stylesheet" href="home.txt">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #1c1c1c;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar img {
+      height: 40px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: #f39c12;
+    }
+    .search-bar {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -18,33 +57,126 @@
       background-color: white;
       margin: 4px 0;
     }
+    .banner {
+      background-size: cover;
+      background-position: center;
+      padding: 60px 20px;
+      text-align: center;
+      background-blend-mode: multiply;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .banner h1 {
+      font-size: 48px;
+      color: #f1c40f;
+    }
+    .row {
+      padding: 30px 20px;
+    }
+    .row h2 {
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+    .list {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
     .list img {
-      width: 100px;
-      max-height: 150px;
+      width: 120px;
+      height: 180px;
       object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .list img:hover {
+      transform: scale(1.05);
+    }
+    .modal, .search-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      display: flex;
+      gap: 20px;
+      color: #fff;
     }
     .modal-body img {
-      width: 25%;
+      width: 30%;
+      border-radius: 10px;
+    }
+    .modal-text h2 {
+      margin-bottom: 10px;
+    }
+    .stars {
+      color: gold;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+    .search-modal input {
+      padding: 10px;
+      width: 60%;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+    .search-modal .results {
+      display: flex;
+      gap: 15px;
     }
     .search-modal img {
       width: 90px;
+      border-radius: 8px;
     }
+    .footer {
+      background: #1c1c1c;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer-links a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .nav-links { display: none; flex-direction: column; background: #222; padding: 10px; width: 100%; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2a2a2a;
+        padding: 10px;
+        width: 100%;
+      }
       .nav-links.show { display: flex; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <img src="css/logo.png" alt="MovieHub Logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h1 style=\"color:white\">MovieHub</h1>')">
+    <img src="css/logo.png" alt="MovieHub Logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h1 style=\'color:white\'>MovieHub</h1>')">
     <div class="hamburger" onclick="toggleMobileMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
     <nav class="nav-links" id="navLinks">
       <a href="#">Home</a>
@@ -56,12 +188,10 @@
     <input class="search-bar" type="text" placeholder="Search..." onclick="openSearchModal()">
   </header>
 
-  <!-- Banner -->
   <section class="banner" style="background-image: url('featured-banner.jpg');">
     <h1>Welcome to MovieHub</h1>
   </section>
 
-  <!-- Movie Categories -->
   <section class="row">
     <h2>&#9733; Popular This Week</h2>
     <div class="list">
@@ -80,7 +210,6 @@
     </div>
   </section>
 
-  <!-- Modal -->
   <div class="modal" id="movieModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&#215;</span>
@@ -95,7 +224,6 @@
     </div>
   </div>
 
-  <!-- Search Modal -->
   <div class="search-modal" id="searchModal">
     <span class="close" onclick="closeSearchModal()">&#215;</span>
     <input type="text" placeholder="Search for a movie...">
@@ -105,7 +233,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <p>&copy; 2025 MovieHub. All rights reserved.</p>
@@ -136,6 +263,5 @@
       document.getElementById('navLinks').classList.toggle('show');
     }
   </script>
-
 </body>
 </html>
