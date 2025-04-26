@@ -1,19 +1,137 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MOVIEHUB🎥</title>
+  <title>MOVIEHUB 🎥</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
   <link rel="preload" href="js/home.js" as="script">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Scripts -->
   <script defer src="js/home.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #101010;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #1c1c1c;
+    }
+
+    .navbar img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-bar {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .banner {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #2c3e50, #000000);
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .row {
+      padding: 20px 30px;
+    }
+
+    .row h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .list img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .list img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal-content,
+    .search-modal {
+      background-color: #1e1e1e;
+    }
+
+    .modal img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .modal-text h2 {
+      font-size: 1.3rem;
+    }
+
+    .footer {
+      background-color: #1c1c1c;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin: 5px 0;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
+
   <div class="navbar">
-    <img src="logo.png" alt="LOGO HERE" />
+    <img src="logo.png" alt="MovieHub Logo" />
     <div class="nav-links">
       <a href="index.html">Home</a>
       <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
@@ -21,7 +139,7 @@
   </div>
 
   <div class="banner" id="banner">
-    <h1 id="banner-title"></h1>
+    <h1 id="banner-title">Welcome to MovieHub 🎥</h1>
   </div>
 
   <div class="row">
@@ -43,14 +161,13 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
       <div class="modal-body">
-  <img id="modal-image" src="" alt="" />
-  <div class="modal-text">
-    <h2 id="modal-title"></h2>
-    <div class="stars" id="modal-rating"></div>
-    <p id="modal-description"></p>
-  </div>
-</div>
-      
+        <img id="modal-image" src="" alt="" />
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+          <div class="stars" id="modal-rating"></div>
+          <p id="modal-description"></p>
+        </div>
+      </div>
       <div class="server-selector">
         <label for="server">Change Server:</label>
         <select id="server" onchange="changeServer()">
@@ -69,16 +186,16 @@
     <div class="results" id="search-results"></div>
   </div>
 
-<footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 MovieHub. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Disclaimer</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 MovieHub. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Disclaimer</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-  
 </body>
+</html>
