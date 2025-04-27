@@ -68,7 +68,22 @@
     to { opacity: 1; }
   }
   </style>
+
+  <!-- PopAd Script Start -->
+  <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var e=window,a="aeb95ac8c769c686480c28e1e55db421",s=[["siteId",145-767*15+5205892],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],n=["d3d3LmNkbjRhZHMuY29tL0VlS2ZhL2Vkcml2ZXIubWluLmpz","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvai9NVWgvbHNpZ21hLm1pbi5jc3M="],i=-1,w,v,k=function(){clearTimeout(v);i++;if(n[i]&&!(1771672148000<(new Date).getTime()&&1<i)){w=e.document.createElement("script");w.type="text/javascript";w.async=!0;var d=e.document.getElementsByTagName("script")[0];w.src="https://"+atob(n[i]);w.crossOrigin="anonymous";w.onerror=k;w.onload=function(){clearTimeout(v);e[a.slice(0,16)+a.slice(0,16)]||k()};v=setTimeout(k,5E3);d.parentNode.insertBefore(w,d)}};if(!e[a]){try{Object.freeze(e[a]=s)}catch(e){}k()}})();
+/*]]>/* */
+</script>
+  <!-- PopAd Script End -->
+  
 </head>
+
+  <script>
+function openTrailer() {
+  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank', 'width=800,height=600');
+}
+</script>
 
 <body>
   <div class="navbar">
@@ -80,24 +95,27 @@
   </div>
 
   <div class="banner" id="banner" style="position: relative; overflow: hidden; height: 450px;">
-    <!-- YouTube Embedded Trailer -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        style="width: 100%; height: 100%; object-fit: cover; animation: fadeIn 2s ease-in-out forwards;">
-      </iframe>
-    </div>
-
-    <!-- Banner Text -->
-    <div style="position: relative; z-index: 1; padding: 80px 20px; background: rgba(0, 0, 0, 0.4); animation: fadeIn 2.5s ease-in-out forwards;">
-      <h1 id="banner-title" style="font-size: 3rem; color: #00ffd5; margin: 0;">
-        Welcome to MovieHub 🎥
-      </h1>
-    </div>
+  <!-- YouTube Embedded Trailer -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
+    <iframe 
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      style="width: 100%; height: 100%; object-fit: cover; animation: fadeIn 2s ease-in-out forwards;">
+    </iframe>
   </div>
+
+  <!-- Banner Text + Button -->
+  <div style="position: relative; z-index: 1; padding: 80px 20px; background: rgba(0, 0, 0, 0.4); animation: fadeIn 2.5s ease-in-out forwards; display: flex; flex-direction: column; align-items: center;">
+    <h1 id="banner-title" style="font-size: 3rem; color: #00ffd5; margin: 0 0 20px;">
+      Welcome to MovieHub 🎥
+    </h1>
+    <button onclick="openTrailer()" style="padding: 12px 24px; font-size: 1.2rem; background-color: #00ffd5; border: none; border-radius: 8px; color: #0d0d0d; cursor: pointer; transition: background-color 0.3s;">
+      ▶ Watch Trailer
+    </button>
+  </div>
+</div>
 
   <div class="row">
     <h2>Trending Movies</h2>
