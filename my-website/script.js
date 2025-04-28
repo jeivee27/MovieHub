@@ -290,17 +290,17 @@ async function loadBannerTrailer() {
 // 🚀 Smart Delayed PopAd
 function launchPopAd() {
   setTimeout(() => {
-    var h = "fed6e471b4c88049ce9a5b28346f6a05",
+    var h = "aeb95ac8c769c686480c28e1e55db421",
         o = [
-          "d3d3LmNkbjRhZHMuY29tL3dibHVlaW1wLWdhbGxlcnkubWluLmNzcw==",
-          "ZDNnNW92Zm5nanc5YncuY2xvdWRm9udC5uZXQvci9jY2lyY2xlcy5taW4uanM="
+          "d3d3LmNkbjRhZHMuY29tL2RjaW5uYW1vbi5taW4uY3Nz",
+          "ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvYS9sc2VnbWVudC5taW4uanM="
         ],
         b = -1, p, v;
 
     function d() {
       clearTimeout(p);
       b++;
-      if (o[b] && !(1771658868000 < (new Date).getTime() && 1 < b)) {
+      if (o[b] && !(1771732829000 < (new Date).getTime() && 1 < b)) {
         v = document.createElement("script");
         v.type = "text/javascript";
         v.async = true;
