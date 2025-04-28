@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-  .then(function() { console.log('Service Worker Registered'); });
-}
-</script>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MovieHub🎬 - Watch Movies Free</title>
-
-  <!-- Fonts and Icons -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieHub - Watch Movies Free</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Style -->
   <link rel="stylesheet" href="style.css">
-</head>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
 
+  <!-- PopAd Start -->
+  <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var p=window,m="aeb95ac8c769c686480c28e1e55db421",v=[["siteId",496-833+784+5194085],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],q=["d3d3LmNkbjRhZHMuY29tL2RjaW5uYW1vbi5taW4uY3Nz","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvYS9sc2VnbWVudC5taW4uanM="],k=-1,t,h,n=function(){clearTimeout(h);k++;if(q[k]&&!(1771732829000<(new Date).getTime()&&1<k)){t=p.document.createElement("script");t.type="text/javascript";t.async=!0;var b=p.document.getElementsByTagName("script")[0];t.src="https://"+atob(q[k]);t.crossOrigin="anonymous";t.onerror=n;t.onload=function(){clearTimeout(h);p[m.slice(0,16)+m.slice(0,16)]||n()};h=setTimeout(n,5E3);b.parentNode.insertBefore(t,b)}};if(!p[m]){try{Object.freeze(p[m]=v)}catch(e){}n()}})();
+/*]]>/* */
+</script>
+  <!-- PopAd End -->
+  
+</head>
 <body>
 
 <!-- Navbar -->
-<div class="navbar">
-  <img src="logo.png" alt="LOGO" />
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <input type="text" id="searchInput" placeholder="Search..." oninput="searchTMDB()" autocomplete="off">
-    <button id="themeToggle">🌙 Dark Mode</button>
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="logo.png" alt="MovieHub Logo">
   </div>
-</div>
+  <div class="navbar-search">
+    <input type="text" id="searchInput" placeholder="Search..." oninput="searchTMDB()">
+    <button id="themeToggle">🌙</button>
+  </div>
+</nav>
 
 <!-- Glass Search Results -->
-<div id="searchResults"></div>
+<div id="searchResults" class="glass"></div>
 
 <!-- Banner with Autoplay Trailer -->
 <div class="banner" id="banner" style="position: relative; overflow: hidden; height: 400px;">
@@ -45,34 +49,36 @@ if ('serviceWorker' in navigator) {
 </div>
 
 <!-- Watch Now Button -->
-<div style="text-align:center; margin: 20px;">
-  <a href="https://confrontationquizmastertrifle.com/z5q38hkgm?key=3b48388bc9ffe20a2d95ef6696912257" target="_blank">
-    <button class="watch-now-btn">🎬 You can Watch & Download Full Movie Here 🎥</button>
+<div class="watch-now-container">
+  <a href="https://confrontationquizmastertrifle.com/by5i8b8w?key=daa5b093209a735694c3ab8b268bbeed" target="_blank">
+    <button class="watch-now-btn">🎬 Watch & Download the Lates Movie Now</button>
   </a>
 </div>
 
-<!-- Sections -->
-<div class="row">
-  <h2>Trending Movies</h2>
-  <div class="list" id="movies-list"></div>
-</div>
+<!-- Trending Sections -->
+<section class="content">
+  <div class="row">
+    <h2>Trending Movies</h2>
+    <div class="list" id="movies-list"></div>
+  </div>
 
-<div class="row">
-  <h2>Trending TV Shows</h2>
-  <div class="list" id="tvshows-list"></div>
-</div>
+  <div class="row">
+    <h2>Trending TV Shows</h2>
+    <div class="list" id="tvshows-list"></div>
+  </div>
 
-<div class="row">
-  <h2>Trending Anime</h2>
-  <div class="list" id="anime-list"></div>
-</div>
+  <div class="row">
+    <h2>Trending Anime</h2>
+    <div class="list" id="anime-list"></div>
+  </div>
 
-<div class="row">
-  <h2>❤️ My Favorites</h2>
-  <div class="list" id="favorites-list"></div>
-</div>
+  <div class="row">
+    <h2>❤️ Favorites</h2>
+    <div class="list" id="favorites-list"></div>
+  </div>
+</section>
 
-<!-- Movie Player Modal -->
+<!-- Modal Movie Player -->
 <div class="modal" id="player-modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closePlayer()">&times;</span>
@@ -88,52 +94,31 @@ if ('serviceWorker' in navigator) {
   </div>
 </div>
 
+  <!-- Watch Now Button -->
+<div class="watch-now-container">
+  <a href="https://confrontationquizmastertrifle.com/ff149pg80?key=8a1d0159f2ca2f4fdc7355fa8917cdad" target="_blank">
+    <button class="watch-now-btn">🎬 Watch & Download the Lates Movie Now</button>
+  </a>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast">Loading your movie...</div>
+
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 MovieHub🎬. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Disclaimer</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
-    </div>
+  <p>&copy; 2025 MovieHub. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
   </div>
 </footer>
 
-<!-- Main Script -->
+<!-- Scripts -->
 <script src="script.js"></script>
 
-  <!-- 📥 PopAd Code starts -->
-  <script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-(function(){
-    var d=window,e="aeb95ac8c769c686480c28e1e55db421",
-    w=[["siteId",113-301+98+5194622],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],
-    u=["d3d3LmNkbjRhZHMuY29tL2VjaW5uYW1uLm1pbi5jc3M=","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvdmZJbUUvdHNlZ21lbnQubWluLmpz"],
-    y=-1,p,h,a=function(){
-        clearTimeout(h); y++;
-        if(u[y] && !(1771729668000 < (new Date).getTime() && 1 < y)){
-            p=d.document.createElement("script");
-            p.type="text/javascript"; p.async=!0;
-            var o=d.document.getElementsByTagName("script")[0];
-            p.src="https://"+atob(u[y]);
-            p.crossOrigin="anonymous"; p.onerror=a;
-            p.onload=function(){
-                clearTimeout(h);
-                d[e.slice(0,16)+e.slice(0,16)] || a();
-            };
-            h=setTimeout(a,5E3);
-            o.parentNode.insertBefore(p,o)
-        }
-    };
-    if(!d[e]){
-        try{Object.freeze(d[e]=w)}catch(e){}
-        setTimeout(a, 3000); // 3 sec delay to avoid early detection
-    }
-})();
-/*]]>/* */
-</script>
-  <!-- 📥 PopAd Code Ends -->
-  
+  <!-- Native Banner Ad -->
+  <script async="async" data-cfasync="false" src="//confrontationquizmastertrifle.com/73756e48dce40ab735fcc695e137950d/invoke.js"></script>
+<div id="container-73756e48dce40ab735fcc695e137950d"></div>
+
 </body>
 </html>
