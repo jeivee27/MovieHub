@@ -80,7 +80,7 @@ function buildPlayerURL(server, id, type) {
 
 // 🎥 Fetch Trending Movies
 async function fetchTrendingMovies() {
-  const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${2fc7b3876456eb119074d7db7ab5a65a}`);
+  const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`);
   const data = await res.json();
   const list = document.getElementById('movies-list');
   data.results.forEach(movie => createMovieCard(movie, list, 'movie'));
@@ -88,7 +88,7 @@ async function fetchTrendingMovies() {
 
 // 📺 Fetch Trending TV Shows
 async function fetchTrendingTV() {
-  const res = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${2fc7b3876456eb119074d7db7ab5a65a}`);
+  const res = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${API_KEY}`);
   const data = await res.json();
   const list = document.getElementById('tvshows-list');
   data.results.forEach(tv => createMovieCard(tv, list, 'tv'));
@@ -190,7 +190,7 @@ async function searchTMDB() {
     return;
   }
 
-  const res = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${2fc7b3876456eb119074d7db7ab5a65a}&query=${encodeURIComponent(query)}`);
+  const res = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
   const data = await res.json();
 
   resultsBox.innerHTML = '';
@@ -268,10 +268,10 @@ document.addEventListener('click', function(event) {
 
 // 🚀 Load Banner Trailer
 async function loadBannerTrailer() {
-  const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${2fc7b3876456eb119074d7db7ab5a65a}`);
+  const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`);
   const data = await res.json();
   const randomMovie = data.results[Math.floor(Math.random() * data.results.length)];
-  const res2 = await fetch(`https://api.themoviedb.org/3/movie/${randomMovie.id}/videos?api_key=${2fc7b3876456eb119074d7db7ab5a65a}`);
+  const res2 = await fetch(`https://api.themoviedb.org/3/movie/${randomMovie.id}/videos?api_key=${API_KEY}`);
   const videos = await res2.json();
   const trailer = videos.results.find(v => v.type === 'Trailer' && v.site === 'YouTube');
 
@@ -286,6 +286,7 @@ async function loadBannerTrailer() {
     bannerTitle.innerText = randomMovie.title || "Premium Movies";
   }
 }
+
 
 // 🚀 Start App
 fetchTrendingMovies();
