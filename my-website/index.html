@@ -206,6 +206,19 @@
       document.body.appendChild(s);
     }, 5000); // 5 seconds delay
   </script>
+
+    <!-- ✅ Popunder Trigger Script (loads ad after first click) -->
+  <script>
+    document.addEventListener('click', function popAdOnce() {
+      const script = document.createElement('script');
+      script.src = "https://ligheechoagool.com/88/tag.min.js";
+      script.setAttribute('data-zone', '144186');
+      script.async = true;
+      script.setAttribute('data-cfasync', 'false');
+      document.body.appendChild(script);
+      document.removeEventListener('click', popAdOnce); // run only once
+    });
+  </script>
   
 </body>
 </html>
